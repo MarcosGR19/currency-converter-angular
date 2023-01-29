@@ -1,0 +1,14 @@
+<div class="main">
+    <div class="input">
+        <label class="input__curr">{{currentCurr}}</label>
+        <input class="input__rate" type="number" min=0 value=1 [(ngModel)]='inputNumber' (ngModelChange)="changeValueCurrency(inputNumber)">
+    </div>
+    
+    <div class="gallery">
+      <div class="currency-card" *ngFor="let curr of currencies">
+        <h4 (click)="changeCurr(curr.name)" class="curency-card__name">{{curr.name}}</h4>
+        <p>Rate: {{(curr.rate).toFixed(2)}}</p>
+        <p class="value">{{curr.outputValue}}</p>
+      </div>
+    </div>
+</div>
